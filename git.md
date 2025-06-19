@@ -66,3 +66,15 @@ Para poder realizar un commit sin primeramente pasar todos nuestros cambios al a
 ```bash
 git commit -a
 ```
+
+### Como eliminar archivos
+
+Para la eliminacion del archi primeramente tendras que eliminar el propio archivo que ya no utilizas y despues lanzaremos el git add con el archivo eliminado y ya realizamos el commit.
+
+Pasos:
+
+```bash
+rm archivo.txt
+git add archivo.txt
+git commit 
+```
