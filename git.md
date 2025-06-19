@@ -124,4 +124,38 @@ Como observamos en la imagen la parte de la izquierda es la parte de nuestra are
         - Verde --> Se encuentra dentro del area de Staging.
         - Rojo --> Se encuentra fuera del area de Staging.
     - a --> Significa que ese archivo ha sido añadido.
-    - ?? --> Significa que esta rchivo no esta siendo seguido ni el directoiro de trabajo ni en el area de Staging.   
+    - ?? --> Significa que esta rchivo no esta siendo seguido ni el directoiro de trabajo ni en el area de Staging.  
+
+### Observar el historial
+
+Para poder observar por completo todo el historial de nuestros commits deberemos hacer lo siguiente:
+
+- git log --> Muestra por completo todos los commits que hemos realizado en la rama.
+
+```bash
+git log
+```
+
+![Imagen de ejemplo sobre el comando git log](/images/gitLog.png)
+
+- git log --oneline --> Muestra todos los commits realizados pero en una sola linia.
+
+```bash
+git log --oneline
+```
+
+![Imagen de ejemplo sobre el comando git log --oneline](/images/gitLogOneline.png)
+
+- git log --oneline --reverse --> Muestra lo mismo que el anterior pero con la diferencia que el primero que muestra es el primer commit realizado.
+
+```bash
+git log --oneline --reverse
+```
+
+![Imagen de ejemplo sobre el comando git log --oneline --reverse](/images/gitLogOnelineReverse.png)
+
+- git log --oneline --graph --> Muestra los mismo que los dos anteriores pero esta vez tendra forma grafica para observar bien sobre todo cuando tenemos mas de una rama.
+
+```bash
+git log --oneline --graph
+```
