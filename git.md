@@ -41,3 +41,19 @@ Aqui pasarian todos nuestros archivos que comienzen por archivo y termine por .t
 
 ### Creando commits
 
+Para crear nuestro commit lo que tendremos que realizar es lo siguiente:
+
+- git commit --> Si hemos configurado nuestro git de forma correcta nos abrira nuestro editor de codigo en el cual en la linia 1 tendremos que poner un resumen de maximo 80 caracteres de que hemos realizado y a partir de la linia 3 podremos realizar la explicacion mas detallada de que hemos realizado.
+
+```bash
+git commit
+```
+
+Tambien se puede crear el mensaje de nuestro commir desde la terminal de la siguiente forma:
+
+- git commit -m "mensaje" --> Aqui nos realiza un commit con un mensaje que le enviamos desde la terminal.
+
+```bash
+git commit -m "mensaje"
+```
+
