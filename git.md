@@ -86,3 +86,23 @@ Para eliminat el archivo en el area de staging realizaremos:
 ```bash
 git rm archivo.txt
 ```
+
+### Como mover archivos
+
+Para mover/renombrar un archivo y despues guardarlo en nuestro repositorio lo que tendremos que realizar es:
+
+Pasos:
+
+```bash
+mv archivo1.txt app.py
+git add archivo1.txt
+git add app.py
+```
+
+Pero tambien tenemos una forma de poder salatarnos el paso de realizar el git add, se tendria que hacer de la siguiente manera.
+
+- git mv archivo1.txt app.py --> LO que realiza esta accion es mover nuestro archivo1.txt hacia un archivo llamado app.py y con este comando nos podriamos saltar el paso de añadir a mano los archivos.
+
+```bash
+git mv archivo1.txt app.py
+```
