@@ -57,3 +57,12 @@ Tambien se puede crear el mensaje de nuestro commir desde la terminal de la sigu
 git commit -m "mensaje"
 ```
 
+### Como saltarse el area de staging
+
+Para poder realizar un commit sin primeramente pasar todos nuestros cambios al area de Staging lo que tendremos que realizar es:
+
+- git commit -a --> Esto nos permite realizar directamente un commit de todos nuestros archivos que hemos midifcado/agregado.
+
+```bash
+git commit -a
+```
