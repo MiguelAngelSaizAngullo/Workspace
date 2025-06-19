@@ -106,3 +106,22 @@ Pero tambien tenemos una forma de poder salatarnos el paso de realizar el git ad
 ```bash
 git mv archivo1.txt app.py
 ```
+
+### Estado corto
+
+Para poder mostrar el estado de una forma mas corta lo que tendremos que realizar es:
+
+- git status -s --> Muestra el estado de nuestros componentes pero de una forma mas corta.
+
+Ejemplo:
+
+![Imagen de ejemplo sobre el estado corto](/images/estadoCorto.png)
+
+Como observamos en la imagen la parte de la izquierda es la parte de nuestra area de Staging mientras que la parte de la derecha es la parte del directorio.
+
+- Parte del staging:
+    - m --> Significa que ese archivo ha sido modificado.
+        - Verde --> Se encuentra dentro del area de Staging.
+        - Rojo --> Se encuentra fuera del area de Staging.
+    - a --> Significa que ese archivo ha sido añadido.
+    - ?? --> Significa que esta rchivo no esta siendo seguido ni el directoiro de trabajo ni en el area de Staging.   
