@@ -78,3 +78,11 @@ rm archivo.txt
 git add archivo.txt
 git commit 
 ```
+
+Para eliminat el archivo en el area de staging realizaremos:
+
+- git rm archivo.txt --> Aqui nos eliminara de nuestra area de staging el archivo eliminado.
+
+```bash
+git rm archivo.txt
+```
