@@ -193,3 +193,13 @@ Tambien podemos observar que archivos existian dentro del commit realizado.
 ```bash
 git ls-tree HEAD~1
 ```
+
+### Quitar archivos que se encuentran en Staging
+
+Para quitar un archivo de stsging lo que tendremos que realizar es lo siguiente:
+
+- git restore --stage archivo --> Quita el archivo del area de Staging.
+
+```bash
+git restore --stage index.py
+```
