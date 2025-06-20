@@ -159,3 +159,37 @@ git log --oneline --reverse
 ```bash
 git log --oneline --graph
 ```
+
+### Observar el contenido de los commits
+
+Para poder observar un commit en especifico lo que tendremos que realizar es:
+
+- git show idCommit --> Te mostrara toda la informacion sobre el comit que has especificado a traves de la ID.
+
+```bash
+git show ca2f4a3
+```
+
+Tambien podriamos observar un archivo especifico dentro del commit creado, se realiza a traves de:
+
+- git show idCommid:archivo --> Te mostrara el contenido de ese archivo justo cuando has realizado ese commit.
+
+```bash
+git show ca2f4a3:git.md
+```
+
+Tambien se podria realizar mirando cuantos commits queremos tirar hacia atras.
+
+- git show HEAD~1 --> ESto te mostraria el commit justo anterior del ultimo commit realizado.
+
+```bash
+git show HEAD~1
+```
+
+Tambien podemos observar que archivos existian dentro del commit realizado.
+
+- git ls-tree commit --> Mostrara los archivos que existen dentro del commit que hemos especificado.
+
+```bash
+git ls-tree HEAD~1
+```
