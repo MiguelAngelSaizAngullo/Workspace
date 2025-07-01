@@ -203,3 +203,11 @@ Para quitar un archivo de stsging lo que tendremos que realizar es lo siguiente:
 ```bash
 git restore --stage index.py
 ```
+
+### Ignorar archivos y directorios
+
+Tambien podemos ignorar algunos archivos o directorios que nosotros no queramos subir a nuestro commit, se tendria que realizar:
+
+- 1º: Creas el archivo en tu raiz llamado .gitignore --> Este archivo nos permitira poner dentro los directorios o archivos que no queramos subir a nuestro commit.
+
+- 2º: Poner el arhcivo/directorio dentro de nuestro archivo: Si quieres añadir un directorio tendremos que poner "/" al final para indicarle que es un directorio y no n archivo.
