@@ -1,8 +1,8 @@
 import "./App.css";
-import Titulo from "./Titulo";
+import Card from "./components/Card";
 
 function App() {
-  return <Titulo></Titulo>;
+  return <Card></Card>;
 }
 
 export default App;
