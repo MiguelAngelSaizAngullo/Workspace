@@ -1,4 +1,9 @@
-function Card() {
+interface Props {
+  body: string;
+}
+
+function Card(props: Props) {
+  const { body } = props;
   return (
     <div
       className="card"
@@ -6,9 +11,7 @@ function Card() {
         width: "350px",
       }}
     >
-      <div className="card-body">
-        <CardBody></CardBody>
-      </div>
+      <div className="card-body">{body}</div>
     </div>
   );
 }
