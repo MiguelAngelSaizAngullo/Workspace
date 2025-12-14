@@ -192,3 +192,61 @@ Como podemos observar ahora mismo dentro del componente Card tenemos 2 funciones
 - 2º: Utilizar <> y </>
 
 Esto es lo mismo que añadir un elemento padre, pero como no nos interesa poner un div porque ya lo tenemos en la primera funcion deberiamos realizar alguna de las dos opciones.
+
+## Pasando Props
+
+Las props realmente significan propiedades que les podemos pasar a nuestros componentes, como por ejemplo un nombre para asi poder reutilizar los componentes, para pasar las props lo que deberemos hacer es ir a nuestro componente donde llamamos al componente el qual va a recibir propiedades y desde ahi enviarle las propiedades necesarias.
+
+Ejemplo desde App.tsx:
+
+```React
+import "./App.css";
+import Card from "./components/Card";
+
+function App() {
+  return <Card body={"Hola Miguel"}></Card>;
+}
+
+export default App;
+```
+
+Aqui como observamos en este caso lo que estamos realizando es enviarle una propiedad llamada body de tipo string al componente Card y ahora observamos que tendriamos que realizar en el componente Card:
+
+```React
+interface Props {
+  body: string;
+}
+
+function Card(props: Props) {
+  const { body } = props;
+  return (
+    <div
+      className="card"
+      style={{
+        width: "350px",
+      }}
+    >
+      <div className="card-body">{body}</div>
+    </div>
+  );
+}
+
+export function CardBody() {
+  return (
+    <>
+      <h5 className="card-title">Card title</h5>
+      <p className="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" className="btn btn-primary">
+        Go somewhere
+      </a>
+    </>
+  );
+}
+
+export default Card;
+```
+
+Aqui en este caso al estar utilizando TypeScript y no JavaScript lo primero que tendriamos que crear es una inteficie (crear un objeto con los tipos pero sin valores) con todos los elementos que le pasaremos y con su tipo de variables en nuestro caso seria una unica propiedad de tipo string y por ultimo lo que hariamos seria ir a la card y ahora lo que hariamos sera destructurar nuestro bjetos props para poder recoger nuestras variables (!!Importante el nombre de la variable se tiene que llamar igual que cuando enviamos la variable) y por ultimo ponemos la variable donde la queramos mostrar.
