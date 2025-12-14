@@ -250,3 +250,43 @@ export default Card;
 ```
 
 Aqui en este caso al estar utilizando TypeScript y no JavaScript lo primero que tendriamos que crear es una inteficie (crear un objeto con los tipos pero sin valores) con todos los elementos que le pasaremos y con su tipo de variables en nuestro caso seria una unica propiedad de tipo string y por ultimo lo que hariamos seria ir a la card y ahora lo que hariamos sera destructurar nuestro bjetos props para poder recoger nuestras variables (!!Importante el nombre de la variable se tiene que llamar igual que cuando enviamos la variable) y por ultimo ponemos la variable donde la queramos mostrar.
+
+## Multiples Props
+
+Tambien podriamos pasar mas de una prop a un componente, esta vez vamos a realizar lo mismo pero de momento vamos a dejar el componente Card para mas adelante esta vez unicamente utilizaremos la funcion CardBody y le enviaremos por paramentros tanto el titulo como el texto que quedremos que aparezca en el componente.
+
+Primero observaremos el App.tsx:
+
+```React
+import "./App.css";
+import { CardBody } from "./components/Card";
+
+function App() {
+  return (
+    <CardBody title={"Hola Mundo"} text={"El texto del componente"}></CardBody>
+  );
+}
+
+export default App;
+```
+
+Como vemos esta vez importamos de momento unicamente la funcion CardBody y le enviaremos dos parametros tanto el titulo como el texto. Ahora observaremos el codigo de la funcion de CardBody:
+
+```React
+interface CardBodyProps {
+  title: string;
+  text?: string;
+}
+
+export function CardBody(props: CardBodyProps) {
+  const { title, text } = props;
+  return (
+    <>
+      <h5 className="card-title">{title}</h5>
+      <p className="card-text">{text}</p>
+    </>
+  );
+}
+```
+
+Primero crearemos la interfaz y si queremos que alomejor una de las variables puedan no recibir texto lo que tendremos que realizar es añadir el ? despues de crear la variable asi le decimos que esa variable puede estar vacia y ya luego lo que realizamos es mostrar por pantalla todo el body de la Card.
