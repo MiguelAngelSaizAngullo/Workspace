@@ -147,3 +147,48 @@ export default Card;
 ```
 
 En este codigo lo que realizamos es crear un componente llamado Card el qual es copiado a través de bootstrap, lo unico que tenemos es que al div general de toda la card le añadimos un ancho a traves de la etiqueta style, esto recibe un objeto pero en este caso que el objeto solo tiene una propiedad lo podemos realizar dentro de la etiqueta style directamente. Aunque esto es una mala practica y mas a delante veremos como realizarlo de una forma correcta.
+
+## Fragments
+
+Fragmentar el codigo significa separar el codigo, es decir, por ejemplo anteriormente hemos creado el componente Card pues ahora lo que haremos sera dividir el codigo para asi poder reutilizarlo por si en algun momento queremos reutilizar esa Card para otra cosa.
+
+```React
+function Card() {
+  return (
+    <div
+      className="card"
+      style={{
+        width: "350px",
+      }}
+    >
+      <div className="card-body">
+        <CardBody></CardBody>
+      </div>
+    </div>
+  );
+}
+
+export function CardBody() {
+  return (
+    <>
+      <h5 className="card-title">Card title</h5>
+      <p className="card-text">
+        Some quick example text to build on the card title and make up the bulk
+        of the card's content.
+      </p>
+      <a href="#" className="btn btn-primary">
+        Go somewhere
+      </a>
+    </>
+  );
+}
+
+export default Card;
+```
+
+Como podemos observar ahora mismo dentro del componente Card tenemos 2 funciones diferentes una funcion que lo que realiza es mostrar el componente Card por completo y luego tenemos la otra funcion que lo que realiza es mostrar el contenido que tendra la Card, como podemos observar para poder realizar eso, la funcion CardBody al devolver el codigo tiene que tener un elemento padre por ejemplo un div pero como aqui no nos interesa que tenga un div tenemos dos opciones:
+
+- 1º: Importar Fragments de react
+- 2º: Utilizar <> y </>
+
+Esto es lo mismo que añadir un elemento padre, pero como no nos interesa poner un div porque ya lo tenemos en la primera funcion deberiamos realizar alguna de las dos opciones.
