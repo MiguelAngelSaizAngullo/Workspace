@@ -111,3 +111,39 @@ Este codigo lo que hace es importar el componente Titulo y luego retorna lo que 
 ## Como funciona React?
 
 React lo que realiza es recoger todo el codigo que hemos escrito en tsx (TypeScript) o jsx (JavaScript) y transformarlo a HTML, esto lo que realiza es crear diferentes nodos. Cuando existan cambios en nuestro codigo lo que realiza es crear una copia de esto mismo dentro de la memoria del PC y a su vez buscara la diferencia y una vez sabe qual es la diferencia react entrga la responsabilidad de poder renderizar el proyecto en el explorador web del usuario. El encargado de poder mostrar nuestra app es react-dom.
+
+# Componentes
+
+## Componente Card
+
+Para crear un componente primero debemos crear nuestra carpeta components que se encontrara dentro de la carpeta src.
+
+Ejemplo de componente:
+
+```React
+function Card() {
+  return (
+    <div
+      className="card"
+      style={{
+        width: "350px",
+      }}
+    >
+      <div className="card-body">
+        <h5 className="card-title">Card title</h5>
+        <p className="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a href="#" className="btn btn-primary">
+          Go somewhere
+        </a>
+      </div>
+    </div>
+  );
+}
+
+export default Card;
+```
+
+En este codigo lo que realizamos es crear un componente llamado Card el qual es copiado a través de bootstrap, lo unico que tenemos es que al div general de toda la card le añadimos un ancho a traves de la etiqueta style, esto recibe un objeto pero en este caso que el objeto solo tiene una propiedad lo podemos realizar dentro de la etiqueta style directamente. Aunque esto es una mala practica y mas a delante veremos como realizarlo de una forma correcta.
