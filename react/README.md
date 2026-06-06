@@ -290,3 +290,73 @@ export function CardBody(props: CardBodyProps) {
 ```
 
 Primero crearemos la interfaz y si queremos que alomejor una de las variables puedan no recibir texto lo que tendremos que realizar es añadir el ? despues de crear la variable asi le decimos que esa variable puede estar vacia y ya luego lo que realizamos es mostrar por pantalla todo el body de la Card.
+
+## Children
+
+Con la propiedad children nos sirve para "advertir" que ese componente dentro tendra un contenido ya sea un texto, una variable u otro componente. Para conseguir esto lo que tendremos que hacer es ir al componente y añadir que va a recibir un "hijo" se realiza de la siguiente manera:
+
+```rect
+import type { ReactNode } from "react";
+
+interface Props {
+  children: ReactNode;
+}
+
+function Card(props: Props) {
+  const { children } = props;
+  return (
+    <div
+      className="card"
+      style={{
+        width: "350px",
+      }}>
+      <div className="card-body">{children}</div>
+    </div>
+  );
+}
+
+interface CardBodyProps {
+  title: string;
+  text?: string;
+}
+
+export function CardBody(props: CardBodyProps) {
+  const { title, text } = props;
+  return (
+    <>
+      <h5 className="card-title">{title}</h5>
+      <p className="card-text">{text}</p>
+    </>
+  );
+}
+
+export default Card;
+```
+
+El import type { ReactNode } from "react" nos sirve para poder poner un componente en vez de un texto, luego en la interface le decimos que el children es del tipo ReactNode para poder asi poner un componente o incluso una variable.
+
+## Imprimir listas
+
+Creamos un componente que se llama lista y ahi lo que haremos sera meter una lista con los elementos que nosotros necesitemos:
+
+```react
+type Props = {
+  data: string[];
+};
+
+const List = ({ data }: Props) => {
+  return (
+    <ul className="list-group">
+      {data.map((elemento) => (
+        <li key={elemento} className="list-group-item">
+          {elemento}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+export default List;
+```
+
+En este caso como podemos observar a nuestra lista le tendremos que añadir el elemento key, ya que sino nos mostrara un error, el elemento necesita la key ya que sera como el id de la base de datos.
